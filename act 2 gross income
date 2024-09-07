@@ -1,0 +1,42 @@
+def compute_sss_contribution(gross_income):
+    if gross_income <= 20000:
+        return 125.75
+    elif gross_income <= 50000:
+        return 2200.50
+    else:
+        return 5800.00
+
+def compute_philhealth_contribution(gross_income):
+    if gross_income <= 20000:
+        return 100.00
+    elif gross_income <= 50000:
+        return 1200.00
+    elif gross_income <= 75000:
+        return 6800.00
+    else:
+        return 8800.00
+
+def main():
+    employee_name = input("Enter employee's name: ")
+    department = input("Enter employee's department: ")
+    rate_per_hour = float(input("Enter rate per hour: "))
+    working_hours_per_day = float(input("Enter number of working hours per day: "))
+    days_per_week = float(input("Enter number of days per week: "))
+    weeks_per_month = float(input("Enter number of weeks per month: "))
+
+    gross_income = working_hours_per_day * days_per_week * weeks_per_month * rate_per_hour
+    sss_contribution = compute_sss_contribution(gross_income)
+    philhealth_contribution = compute_philhealth_contribution(gross_income)
+    pagibig_contribution = 100.00
+    total_deduction = sss_contribution + philhealth_contribution + pagibig_contribution
+    net_income = gross_income - total_deduction
+
+    print("Employee's Name:", employee_name)
+    print("Department:", department)
+    print("Gross Income: {:.2f}".format(gross_income))
+    print("Total Deduction: {:.2f}".format(total_deduction))
+    print("Net Income: {:.2f}".format(net_income))
+
+if (__name__== "__main__"):
+    main()
+
