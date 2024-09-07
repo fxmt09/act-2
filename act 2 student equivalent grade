@@ -1,0 +1,66 @@
+#start
+#initialization
+student_name = ""
+final_quizzes = 0
+final_assignment = 0
+final_project = 0
+final_exam = 0
+# Define a function to calculate the final grade
+def calculate_final_grade(quizzes, assignment, project, exam):
+    return 0.30 * quizzes + 0.10 * assignment + 0.40 * exam + 0.20 * project
+
+# Define a function to determine the equivalent grade
+def determine_equivalent_grade(final_grade):
+    if final_grade >= 98:
+        return 4.00
+    elif final_grade >= 95:
+        return 3.75
+    elif final_grade >= 92:
+        return 3.50
+    elif final_grade >= 89:
+        return 3.25
+    elif final_grade >= 86:
+        return 3.00
+    elif final_grade >= 83:
+        return 2.75
+    elif final_grade >= 80:
+        return 2.50
+    elif final_grade >= 77:
+        return 2.25
+    elif final_grade >= 74:
+        return 2.00
+    elif final_grade >= 71:
+        return 1.75
+    elif final_grade >= 68:
+        return 1.50
+    elif final_grade >= 64:
+        return 1.25
+    elif final_grade >= 60:
+        return 1.00
+    else:
+        return 0.00
+
+# Main program
+student_name = input("Enter student's name: ")
+final_quizzes = float(input("Enter final quizzes rating: "))
+final_assignment = float(input("Enter final research/assignment rating: "))
+final_project = float(input("Enter final project rating: "))
+final_exam = float(input("Enter final exam rating: "))
+#get final grade by using the formula
+final_grade = calculate_final_grade(final_quizzes, final_assignment, final_project, final_exam)
+#print error if the grade exceeds 100
+if final_grade > 100:
+    print("Error: Final grade invalid.")
+else:
+    equivalent_grade = determine_equivalent_grade(final_grade)
+    print("Student's Name:", student_name)
+    print("Final Quizzes:", final_quizzes)
+    print("Final Research/Assignment:", final_assignment)
+    print("Final Project:", final_project)
+    print("Final Exam:", final_exam)
+    print("Final Grade:", final_grade)
+    print("Equivalent Grade:", equivalent_grade)
+
+    #end
+
+
